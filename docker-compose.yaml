@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  app:
+    container_name: awesome_bank_web
+    build: ./
+    restart: on-failure
+    ports:
+      - "8919:8919"
+    environment:
+      SPRING_APPLICATION_JSON: '{
+        "spring.mvc.view.prefix": "/WEB-INF/views/",
+        "spring.mvc.view.suffix": ".jsp",
+        "server.port": "8919",
+        "feign.client.name.expense": "awesome-bank-api",
+        "feign.client.url.expense": "localhost:8918"
+      }'
+    volumes:
+      - .m2:/root/.m2
+    stdin_open: true
+    tty: true
