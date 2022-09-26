@@ -37,3 +37,11 @@ In order to make the development easy-understandable for everyone, I present to 
 ### No effect changes
 
 Clean your docker environment (remove images, networks, containers, etc.).
+
+## What can be improved?
+
+I see some improvements:
+- Fallback and Circuit Break procedures
+- Strong modelling (model + DTO)
+- More business rules
+- Frontend
